@@ -35,7 +35,8 @@ for i, number in enumerate(numbers, 1):
 print(f"{year} {name} for about ${cost:,.0f}!")
 # 1922 Gibson L-5 CES for about $16,036!
 
-# TODO: Using a for loop with the range function and f-string formatting,
+for i in range(11):
+    print(f"2 ^ {i:>2} is {2 ** i:>4}")
 # produce the following right-aligned output (DO NOT use a list):
 # 2 ^ 0 is    1
 # 2 ^ 1 is    2
