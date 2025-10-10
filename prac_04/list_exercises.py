@@ -3,7 +3,7 @@ CP1404/CP5632 Practical - Suggested Solution
 List exercises
 """
 
-# 1.
+
 numbers = []
 is_finished = False
 while not is_finished:
