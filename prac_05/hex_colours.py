@@ -1,3 +1,5 @@
+from operator import itemgetter
+
 COLOUR_CODES = {
     "aliceblue": "#f0f8ff",
     "antiquewhite": "#faebd7",
@@ -18,3 +20,7 @@ while colour_name != "":
     except KeyError:
         print("Invalid colour name")
     colour_name = input("Enter a colour name: ").lower()
+data = list(COLOUR_CODES.items())
+max_length = max(len(name) for name in COLOUR_CODES)
+for name, code in sorted(data, reverse=True, key=itemgetter(1, 0)):
+    print(f"{name:{max_length}} is {code}")
