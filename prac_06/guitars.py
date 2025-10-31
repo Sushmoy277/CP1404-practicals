@@ -21,13 +21,12 @@ def main():
         print(guitar_to_add, "added.")
         name = input("Name: ")
 
-
     guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
     guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
 
     if guitars:
         print("These are my guitars:")
-        max_length = max(len(guitar.name) for guitar in guitars)# Find the longest name for alignment
+        max_length = max(len(guitar.name) for guitar in guitars)  # Find the longest name for alignment
         for i, guitar in enumerate(guitars, 1):
             vintage_string = " (vintage)" if guitar.is_vintage() else ""
             print(
@@ -59,9 +58,6 @@ def get_year():
                 return year
         except ValueError:
             print("Invalid input.")
-
-
-
 
 
 main()

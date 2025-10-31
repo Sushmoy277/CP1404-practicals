@@ -19,4 +19,5 @@ def main():
     print("The dynamically typed languages are:")
     print("\n".join(dynamic_names))
 
+
 main()

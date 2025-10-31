@@ -6,6 +6,7 @@ Actual:   40 minutes
 
 from prac_06.guitar import Guitar
 
+
 def main():
     first = Guitar("Gibson L-5 CES", 1922, 16035.40)
     second = Guitar("Another Guitar", 2013, 15329.91)
