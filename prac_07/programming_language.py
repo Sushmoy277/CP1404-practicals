@@ -27,17 +27,18 @@ class ProgrammingLanguage:
 
     def __str__(self):
         """Return string representation of the language."""
-        reflection_text = "Yes" if self.reflection else "No"
-        pointer_text = "Yes" if self.pointer_arithmetic else "No"
-        return (f"{self.name}, {self.typing} Typing, Reflection={reflection_text}, PointerArithmetic={pointer_text}, "
-                f"First appeared in {self.year}")
+        reflection_status = "Yes" if self.reflection else "No"
+        pointer_status = "Yes" if self.pointer_arithmetic else "No"
+        return (
+            f"{self.name}, {self.typing} Typing, Reflection={reflection_status}, PointerArithmetic={pointer_status}, "
+            f"First appeared in {self.year}")
 
 
 def run_tests():
     """Run simple tests/demos on ProgrammingLanguage class."""
-    ruby = ProgrammingLanguage("Ruby", "Dynamic", True,  False, 1995)
-    python = ProgrammingLanguage("Python", "Dynamic", True,  False, 1991)
-    visual_basic = ProgrammingLanguage("Visual Basic", "Static", False,  False, 1991)
+    ruby = ProgrammingLanguage("Ruby", "Dynamic", True, False, 1995)
+    python = ProgrammingLanguage("Python", "Dynamic", True, False, 1991)
+    visual_basic = ProgrammingLanguage("Visual Basic", "Static", False, False, 1991)
 
     languages = [ruby, python, visual_basic]
     print(python)
