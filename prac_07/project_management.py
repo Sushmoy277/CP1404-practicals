@@ -9,6 +9,7 @@ from operator import itemgetter
 
 DATE_FORMAT = "%d/%m/%Y"
 
+
 def print_menu():
     print("- (L)oad projects")
     print("- (S)ave projects")
@@ -49,6 +50,7 @@ def main():
             if answer.startswith("y"):
                 save_projects_to(filename, projects)
             print("Thank you for using custom-built project management software.")
+
 
 def load_projects_from(filename):
     """Read projects from a tab-delimited file."""
