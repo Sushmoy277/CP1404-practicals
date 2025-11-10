@@ -23,3 +23,16 @@ def load_projects_from(filename):
             completion = int(row[4])
             projects.append(Project(name, start_date, priority, cost, completion))
     return projects
+
+
+def save_projects_to(filename, projects):
+    """Save projects to a tab-delimited file."""
+    with open(filename, "w", newline="") as out_file:
+        writer = csv.writer(out_file, delimiter="\t")
+        writer.writerow(["Name", "Start Date", "Priority", "Cost Estimate", "Completion"])
+        for p in projects:
+            writer.writerow([p.name,
+                             p.start_date.strftime(DATE_FORMAT),
+                             p.priority,
+                             f"{p.cost_estimate:.2f}",
+                             p.completion])
