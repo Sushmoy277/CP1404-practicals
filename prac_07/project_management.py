@@ -5,6 +5,7 @@ Actual:     minutes"""
 import csv
 import datetime
 from project import Project
+from operator import itemgetter
 
 DATE_FORMAT = "%d/%m/%Y"
 
@@ -50,3 +51,13 @@ def display_projects(projects):
     print("Completed projects:")
     for project in completed:
         print(" ", project.display_line())
+
+
+def filter_projects_by_date(projects):
+    """Show projects starting after a given date."""
+    date_text = input("Show projects that start after date (dd/mm/yy): ")
+    filter_date = datetime.datetime.strptime(date_text, DATE_FORMAT).date()
+    filtered = [project for project in projects if project.start_date >= filter_date]
+    filtered.sort(key=itemgetter("start_date"))
+    for project in filtered:
+        print(project.display_line())
