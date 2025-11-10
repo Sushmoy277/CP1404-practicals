@@ -14,7 +14,7 @@ class Project:
         self.completion = completion
 
     def __lt__(self, other):
-        """Allow sorting by priority (lower = higher priority)."""
+        """Allow sorting by priority ."""
         return self.priority < other.priority
 
     def is_complete(self):
