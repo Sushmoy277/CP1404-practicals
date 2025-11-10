@@ -28,7 +28,7 @@ def main():
         reflection = parts[2] == "Yes"
         pointer_arithmetic = parts[3] == "Yes"
         year = parts[4]
-        language = ProgrammingLanguage(parts[0], parts[1], reflection, pointer_arithmetic,  year)
+        language = ProgrammingLanguage(parts[0], parts[1], reflection, pointer_arithmetic, year)
         # Add the language we've just constructed to the list
         languages.append(language)
     # Close the file as soon as we've finished reading it
