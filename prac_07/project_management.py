@@ -61,3 +61,34 @@ def filter_projects_by_date(projects):
     filtered.sort(key=itemgetter("start_date"))
     for project in filtered:
         print(project.display_line())
+
+
+def add_new_project(projects):
+    """Add a new project."""
+    print("Let's add a new project")
+    name = input("Name: ")
+    start_text = input("Start date (dd/mm/yy): ")
+    start_date = datetime.datetime.strptime(start_text, DATE_FORMAT).date()
+    priority = int(input("Priority: "))
+    cost_text = input("Cost estimate: $")
+    cost = float(cost_text.replace("$", "").replace(",", ""))
+    completion = int(input("Percent complete: "))
+    projects.append(Project(name, start_date, priority, cost, completion))
+
+
+def update_project(projects):
+    """Modify completion or priority for a chosen project."""
+    for i, project in enumerate(projects):
+        print(f"{i} {project.display_line()}")
+    choice = input("Project choice: ")
+    if choice == "":
+        return
+    index = int(choice)
+    project = projects[index]
+    print(project.display_line())
+    new_percent = input("New Percentage: ")
+    if new_percent != "":
+        project.completion = int(new_percent)
+    new_priority = input("New Priority: ")
+    if new_priority != "":
+        project.priority = int(new_priority)
