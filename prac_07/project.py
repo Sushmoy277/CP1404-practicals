@@ -21,7 +21,7 @@ class Project:
         """Return True if the project is finished."""
         return self.completion >= 100
 
-    def __str__(self):
+    def display_line(self):
         """Return a formatted display string."""
         return (f"{self.name}, start: {self.start_date.strftime(DATE_FORMAT)}, "
                 f"priority {self.priority}, estimate: ${self.cost_estimate:,.2f}, "
