@@ -9,13 +9,52 @@ from operator import itemgetter
 
 DATE_FORMAT = "%d/%m/%Y"
 
+def print_menu():
+    print("- (L)oad projects")
+    print("- (S)ave projects")
+    print("- (D)isplay projects")
+    print("- (F)ilter projects by date")
+    print("- (A)dd new project")
+    print("- (U)pdate project")
+    print("- (Q)uit")
+
+
+def main():
+    """Display menu for project management program"""
+    print("Welcome to Pythonic Project Management")
+    filename = "projects.txt"
+    projects = load_projects_from(filename)
+    print(f"Loaded {len(projects)} projects from {filename}")
+
+    choice = input(">>> ")
+    while choice != "q":
+        print_menu()
+        choice = input(">>> ").lower()
+        if choice == "l":
+            name = input("Filename to load from: ")
+            projects = load_projects_from(name)
+        elif choice == "s":
+            name = input("Filename to save to: ")
+            save_projects_to(name, projects)
+        elif choice == "d":
+            display_projects(projects)
+        elif choice == "f":
+            filter_projects_by_date(projects)
+        elif choice == "a":
+            add_new_project(projects)
+        elif choice == "u":
+            update_project(projects)
+        elif choice == "q":
+            answer = input(f"Would you like to save to {filename}? ").lower()
+            if answer.startswith("y"):
+                save_projects_to(filename, projects)
+            print("Thank you for using custom-built project management software.")
 
 def load_projects_from(filename):
     """Read projects from a tab-delimited file."""
     projects = []
     with open(filename, "r", newline="") as in_file:
-        reader = csv.reader(in_file, delimiter="\t")
-        next(reader)  # skip header
+        reader = csv.reader(in_file)
         for row in reader:
             name = row[0]
             start_date = datetime.datetime.strptime(row[1], DATE_FORMAT).date()
