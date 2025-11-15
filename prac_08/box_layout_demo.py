@@ -14,8 +14,10 @@ class BoxLayoutDemo(App):
         self.root.ids.output_label.text = "Hello "
         self.root.ids.output_label.text = f"Hello {self.root.ids.input_name.text}"
 
-    def event_handler(self):
+    def clear_handler(self):
         """Handle the Clear button press."""
         self.root.ids.input_name.text = ""
         self.root.ids.output_label.text = ""
+
+
 BoxLayoutDemo().run()
