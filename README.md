@@ -1,5 +1,5 @@
-[//]: # (CP1404 Practicals Repository)
-[//]: # (About This Repository)
+CP1404 Practicals Repository
+About This Repository
 
 This repository contains all my practical work for CP1404 – Programming II.
 It includes examples and exercises that demonstrate Python concepts such as decisions, repetition, lists, strings, file
@@ -8,7 +8,7 @@ handling, exceptions, and object-oriented programming.
 Author: Sushmoy Paul Rohit
 Subject: CP1404 – Programming II
 
-[//]: # (##Key Lessons About Clean Code)
+Key Lessons About Clean Code
 Through this subject, I have learned that writing clean and maintainable code is just as important as making it work.
 Here are some of the main lessons I’ve learned:
 a)Meaningful naming
